@@ -12,7 +12,7 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <DocumentTitle title='Abide'>
+      <DocumentTitle title='Custom React Starter Kit'>
         <div className='App'>
           <Navbar />
           <RouteHandler />

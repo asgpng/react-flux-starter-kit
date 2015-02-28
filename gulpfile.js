@@ -17,7 +17,6 @@ var gulp         = require('gulp'),
     less         = require('gulp-less'),
     path         = require('path');
 
-
 var paths = {
     build:    'build/',
     public:   'public/',
@@ -104,3 +103,7 @@ gulp.task('bust:replace', ['bust:collect'], function () {
     .pipe(gulp.dest(paths.build));
 });
 
+
+gulp.task('watch', ['less'], function() {
+  gulp.watch('app/**/*.less', ['less']);
+});

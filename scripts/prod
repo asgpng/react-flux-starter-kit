@@ -1,1 +1,12 @@
-NODE_ENV=production node build/app/app.js
+#!/bin/bash
+
+# NODE_ENV=production node build/app/app.js
+
+# Invoke the Forever module (to START our Node.js server).
+NODE_ENV=production \
+./node_modules/forever/bin/forever \
+start \
+-al forever.log \
+-ao out.log \
+-ae err.log \
+build/app/app.js

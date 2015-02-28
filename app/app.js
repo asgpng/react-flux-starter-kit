@@ -12,7 +12,6 @@ var bodyParser   = require('body-parser');
 var cachebuster  = require('../cachebuster');
 var serverRender = require('./server');
 var compression  = require('compression');
-var favicon      = require('serve-favicon');
 var app = express();
 
 app.use(logger(app.get('env') === 'production' ? 'combined' : 'dev'));
@@ -27,9 +26,6 @@ app.use(express.static(publicPath));
 if (app.get('env') === 'production') {
   app.get(cachebuster.path, cachebuster.remove, express.static(publicPath), cachebuster.restore);
 }
-
-// favicon
-app.use(favicon(publicPath + '/images/favicon.ico'));
 
 if (app.get('env') === 'development') {
   // run livereload and webpack dev server
