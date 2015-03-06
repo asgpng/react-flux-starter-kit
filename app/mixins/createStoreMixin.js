@@ -1,5 +1,7 @@
 'use strict';
 
+// from https://github.com/gaearon/flux-react-router-example
+
 function createStoreMixin(stores) {
   var StoreMixin = {
     getInitialState: function() {

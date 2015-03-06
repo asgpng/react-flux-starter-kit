@@ -1,5 +1,7 @@
 'use strict';
 
+// based on https://github.com/gaearon/flux-react-router-example
+
 var _ = require('underscore'),
   EventEmitter = require('events').EventEmitter,
   assign = require('object-assign'),
