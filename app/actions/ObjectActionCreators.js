@@ -11,7 +11,7 @@ module.exports = {
     }
 
     AppDispatcher.handleViewAction({
-      type: ActionTypes.REQUEST_ARTICLE,
+      type: ActionTypes.REQUEST_OBJECT,
       id: id
     });
 
