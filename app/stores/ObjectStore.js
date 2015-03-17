@@ -13,7 +13,7 @@ var mergeIntoBag = StoreUtils.mergeIntoBag;
 
 var _storedObjects = {};
 
-var ArticleStore = createStore({
+var ObjectStore = createStore({
 
   contains: function(id) {
     return (isInBag(_storedObjects, id));
@@ -30,7 +30,7 @@ var ArticleStore = createStore({
   }
 });
 
-ArticleStore.dispatchToken = AppDispatcher.register(function(payload) {
+ObjectStore.dispatchToken = AppDispatcher.register(function(payload) {
 
   var action = payload.action;
 
@@ -38,7 +38,7 @@ ArticleStore.dispatchToken = AppDispatcher.register(function(payload) {
 
     case ActionTypes.REQUEST_OBJECT_SUCCESS:
       mergeIntoBag(_storedObjects, action.response.id, action.response);
-      ArticleStore.emitChange();
+      ObjectStore.emitChange();
       break;
 
      default:
@@ -46,4 +46,4 @@ ArticleStore.dispatchToken = AppDispatcher.register(function(payload) {
   }
 })
 
-module.exports = ArticleStore;
+module.exports = ObjectStore;
