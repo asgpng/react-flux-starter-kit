@@ -43,7 +43,6 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.jsx$/, loaders: ['jsx'] },
-      { test: /\.js$/, loaders: ['react-hot', 'jsx?harmony']},
       { test: /\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") },
       { test: /\.(png|jpg)$/, loader: 'url-loader'},
       { test: /\.json$/, loader: 'json-loader'}
