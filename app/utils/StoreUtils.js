@@ -2,7 +2,7 @@
 
 // based on https://github.com/gaearon/flux-react-router-example
 
-var _ = require('underscore'),
+var _ = require('lodash'),
   EventEmitter = require('events').EventEmitter,
   assign = require('object-assign'),
   CHANGE_EVENT = 'change';
