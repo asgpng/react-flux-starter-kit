@@ -24,7 +24,11 @@ module.exports = {
         "NODE_ENV": JSON.stringify("production") // This has effect on the react lib size
       }
     }),
-    new webpack.optimize.CommonsChunkPlugin('lib', 'lib.js'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'lib',
+      filename: 'lib.js',
+      children: true
+    }),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: {

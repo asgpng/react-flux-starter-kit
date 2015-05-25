@@ -16,7 +16,8 @@ module.exports = {
     path: __dirname,
 
     // Filename to use in HTML
-    filename: 'main.js',
+    filename: '[name].js',
+    chunkFilename: '[id].js',
 
     // Path to use in HTML
     publicPath: 'http://localhost:3001/js/'
@@ -24,8 +25,12 @@ module.exports = {
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin('lib', 'lib.js'),
-    new ExtractTextPlugin("bundle.css", {
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'lib',
+      filename: 'lib.js',
+      children: true
+    }),
+    new ExtractTextPlugin("[name].css", {
       allChunks: true
     })
   ],
