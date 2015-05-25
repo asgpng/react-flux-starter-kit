@@ -12,8 +12,10 @@ var bodyParser   = require('body-parser');
 var cachebuster  = require('../cachebuster');
 var serverRender = require('./server');
 var compression  = require('compression');
+var favicon      = require('serve-favicon');
 var app = express();
 
+app.use(favicon(__dirname + '/../public/images/favicon.ico'));
 app.use(logger(app.get('env') === 'production' ? 'combined' : 'dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
